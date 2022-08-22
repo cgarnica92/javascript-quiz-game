@@ -1,0 +1,63 @@
+* {
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial;
+    border: 2px solid;
+    border-color: blue;
+    min-height: 100vh;
+    margin: 0%;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid;
+    border-color: red;
+}
+
+main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    border-color: yellow;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    width: 50vw;
+    height: 25vh;
+    border-color: green;
+}
+
+.timer {
+
+}
+.start-button {
+
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 12vh;
+    min-width: 20vw;
+    justify-content: center;
+    border: 2px solid;
+    border-color: purple
+}
+
+.high-scores {
+
+}
