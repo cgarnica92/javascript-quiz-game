@@ -61,3 +61,7 @@ section {
 .high-scores {
 
 }
+
+.hide {
+    display: none;
+  }
