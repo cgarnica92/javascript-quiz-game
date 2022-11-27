@@ -41,6 +41,10 @@ section {
     border-color: green;
 }
 
+button {
+    align-items: flex-end;
+}
+
 .timer {
 
 }
@@ -56,6 +60,27 @@ section {
     justify-content: center;
     border: 2px solid;
     border-color: purple
+}
+
+.modal {
+    display: none;
+    position:fixed;
+    border: 2px solid;
+    border-color: aqua;
+    background-color: black;
+    z-index: 1;
+    color: white;
+    min-height: 75%;
+    min-width: 75%;
+    justify-content: center;
+}
+
+.options {
+    display: none;
+}
+
+.hs-banner {
+    white-space: pre;
 }
 
 .high-scores {

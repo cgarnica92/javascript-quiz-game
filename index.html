@@ -8,27 +8,37 @@
     </head>
     <body>
         <header>
-            <button class="high-scores">High Scores</button>
-            <div class="timer hide">timer</div>
+            <button class="hs-button">High Scores</button>
+            <div class="timer"></div>
         </header>
 
+
         <main>
-            <div id="modal">
+                <div class="modal">
+                    <div class="modal-contents">
+                        <div class="high-scores">
+                            <h2 class="hs-banner"><u>High Scores</u></h2>
+                        </div>
+                        <button class="m-button">Go Back</button>
+                    </div>
+                </div>
                 <section>
                     <div class="card text-area">
                         <div class="card game-launch">This quiz will test your knowledge of basic JavaScript elements. You will be given five multiple choice questions to answer over a time limit of 60 seconds.<br> Are you ready to test your might?</div>
                         <div><button class="start-button">BEGIN</button></div>
                     </div>
                 </section>
-                <section class="card options hide">
+                <section class="card options">
                     <div class="card option-a"></div>
                     <div class="card option-b"></div>
                     <div class="card option-c"></div>
                     <div class="card option-d"></div>
                 </section>
-            </div>
         </main>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/questions.js"></script>
+        <script src="assets/js/buttons.js"></script>
+        <script src="assets/js/scores.js"></script>
+        <script src="assets/js/test-scores.js"></script>
     </body>
 </html>
