@@ -1,20 +1,31 @@
 //Score Handlers
 
-function sortScores() {
-
-};
-
 //Checks if score is worthy of the board
 function checkScores() {
-    for (i = 0; i < savedScores.length; i++) {
-        if (currentScore >= JSON.stringify(savedScores[i].score)) {
+    if (savedScores === null) {
+        savedScores = [];
+    }
+    if (currentScore > 0) {
+        if ( savedScores.length < 10 ) {
             isWorthy = true;
             playerInput();
             console.log("You did it! New HS");
             return;
-        } else {
-            isWorthy = false;
+        } 
+        for (i = 0; i < savedScores.length; i++) {
+            if ( currentScore >= JSON.stringify(savedScores[i].score) ) {
+                isWorthy = true;
+                playerInput();
+                console.log("You did it! New HS");
+                return;
+            } else {
+                isWorthy = false;
+            }
         }
+    } else {
+        console.log("Zero Don't Cut it.");
+        isWorthy = false;
+        return
     }
     console.log("ARE YE WORTHY?: " + isWorthy);
 };
@@ -33,4 +44,18 @@ function playerInput() {
     if (mButton.clicked === true) {
             player.name = pInput.value;
     }
+};
+
+//Prints high scores
+function printScores () {
+    var scoreZone = document.createElement("ol");
+    hsContent.appendChild(scoreZone);
+    for ( i = 0; i < savedScores.length; i++) {
+        var scorePost = JSON.parse(savedScores[i]);
+        var scoreSlot = document.createElement("li");
+        scoreZone.appendChild(scoreSlot);
+        scoreSlot.textContent = scorePost.name + " - " + scorePost.score;
+        console.log("Name: " + JSON.stringify(savedScores[i]));
+    }
+    
 };

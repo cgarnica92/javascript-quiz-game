@@ -20,7 +20,11 @@ optAButton.addEventListener("click", function() {
         console.log('Wrong! Your Time Remaining : ' + timeLeft);
     } else if ( askedQs.length === 6 ) {
         currentScore += 50
-        endGame();
+        checkScores();
+        if( isWorthy === false ) {
+            endGame();
+            console.log("Sorry Amigo, Not this Time.");
+        }
         console.log('Your final score is! ' + currentScore);
     } else {
         chooseQ();
@@ -48,7 +52,11 @@ optBButton.addEventListener("click", function() {
         console.log('Wrong! Your Time Remaining : ' + timeLeft);
     } else if ( askedQs.length === 6 ) {
         currentScore += 50
-        endGame();
+        checkScores();
+        if( isWorthy === false ) {
+            endGame();
+            console.log("Sorry Amigo, Not this Time.");
+        }
         console.log('Your final score is! ' + currentScore);
     } else {
         chooseQ();
@@ -76,7 +84,11 @@ optCButton.addEventListener("click", function() {
         console.log('Wrong! Your Time Remaining : ' + timeLeft);
     } else if ( askedQs.length === 6 ) {
         currentScore += 50
-        endGame();
+        checkScores();
+        if( isWorthy === false ) {
+            endGame();
+            console.log("Sorry Amigo, Not this Time.");
+        }
         console.log('Your final score is! ' + currentScore);
     } else {
         chooseQ();
@@ -102,7 +114,11 @@ optDButton.addEventListener("click", function() {
         console.log('Wrong! Your Time Remaining : ' + timeLeft);
     } else if ( askedQs.length === 6 ) {
         currentScore += 50
-        endGame();
+        checkScores();
+        if( isWorthy === false ) {
+            endGame();
+            console.log("Sorry Amigo, Not this Time.");
+        }
         console.log('Your final score is! ' + currentScore);
     } else {
         chooseQ();
@@ -122,10 +138,16 @@ optDButton.addEventListener("click", function() {
 scoreButton.addEventListener("click", function() {
     if (modal.style.display === "flex") {
         modal.style.display = "none";
+        hsContent.style.display = "none";
     } else {    
         modal.style.display = "flex";
         mButton.textContent = "Go Back";
+        printScores();
     }
+    savedScores.sort(function(a, b) { 
+        return b.score = a.score;
+    });
+    console.log("Sorted: " + savedScores)
 });
 
 //Controls Modal Button
@@ -146,8 +168,12 @@ mButton.addEventListener("click", function() {
         player.score = currentScore;
         mContents.removeChild(pInput);
         savedScores.push(JSON.stringify(player));
+        window.localStorage.setItem("highscores", JSON.stringify(savedScores));
         endGame();
         console.log("New High Scores Are: " + JSON.stringify(savedScores));
+        savedScores.sort(function(a, b) { 
+            return b.score = a.score;
+        });
         }
     } else {
         modal.style.display = "none";

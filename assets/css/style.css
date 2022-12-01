@@ -1,13 +1,12 @@
 * {
-
+    background-color: black;
+    color: rgba(6, 238, 6, 0.938);
 }
 
 body {
     display: flex;
     flex-direction: column;
     font-family: Arial;
-    border: 2px solid;
-    border-color: blue;
     min-height: 100vh;
     margin: 0%;
 }
@@ -16,8 +15,6 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid;
-    border-color: red;
 }
 
 main {
@@ -26,8 +23,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid;
-    border-color: yellow;
+    border: none;
 }
 
 section {
@@ -35,14 +31,22 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: 2px solid;
     width: 50vw;
     height: 25vh;
-    border-color: green;
+    border: none;
 }
 
 button {
     align-items: flex-end;
+    border-color: rgba(6, 238, 6, 0.938);
+    border: 4px outset rgba(6, 238, 6, 0.938);
+    border-radius: 8px;
+    font-weight: 900;
+}
+
+button:hover {
+    background-color: rgba(6, 238, 6, 0.938);;
+    color:black;
 }
 
 .timer {
@@ -54,37 +58,53 @@ button {
 
 .card {
     display: flex;
+    border-color: rgba(6, 238, 6, 0.938);
+    border: 5px double rgba(6, 238, 6, 0.938);
     flex-wrap: wrap;
     min-height: 12vh;
     min-width: 20vw;
     justify-content: center;
-    border: 2px solid;
-    border-color: purple
 }
 
 .modal {
     display: none;
     position:fixed;
-    border: 2px solid;
-    border-color: aqua;
-    background-color: black;
+    border: 2px;
+    border-color: rgba(6, 238, 6, 0.938);
+    border: 6px;
+    border-style: double;
     z-index: 1;
-    color: white;
     min-height: 75%;
     min-width: 75%;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.modal-contents {
+    font-size: 25px;
 }
 
 .options {
     display: none;
 }
 
+.options.card {
+    border:none;
+}
+
+.options button {
+    width: 100%;
+}
+.options button:hover {
+    background-color: blueviolet;
+}
+
 .hs-banner {
     white-space: pre;
+    text-align: center;
 }
 
 .high-scores {
-
 }
 
 .hide {

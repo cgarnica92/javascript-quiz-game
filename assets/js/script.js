@@ -12,8 +12,9 @@ var modal = document.querySelector(".modal");
 var mContents = document.querySelector(".modal-contents");
 var scoreButton = document.querySelector(".hs-button");
 var hsBanner = document.querySelector(".hs-banner");
-var highScores = document.querySelector(".high-scores");
+var hsContent = document.querySelector(".high-scores");
 var mButton = document.querySelector(".m-button");
+var goBack = document.createElement("button");
 var qText = document.createElement("h2");
 var optAButton = document.createElement("button");
 var optBButton = document.createElement("button");
@@ -29,7 +30,7 @@ var askedQs = [];
 var currentScore = 0;
 var timeLeft = 6;
 var hourGlass;
-var savedScores = [];
+var savedScores = JSON.parse(window.localStorage.getItem("highscores"));
 var isWorthy;
 var numCorrect = 0;
 
@@ -56,9 +57,7 @@ function startTime(){
 };
 
 //Begins the game; displays the first question/choices and starts the timer
-function startGame(){ 
-    savedScores = testScores;
-    savedScores.sort(JSON.stringify(savedScores.score));
+function startGame(){
     console.log("Sorted Scores: " + JSON.stringify(savedScores));
     scoreButton.style.display = "none";
     options.style.display = "flex";
@@ -117,6 +116,9 @@ function endGame() {
     qDisplay.style.display = "none";
     options.style.display = "none";
     modal.style.display = "flex";
+    mContents.appendChild(goBack);
+    printScores();
+    goBack.textContent = "Exit"
     mButton.textContent = "Play Again?";
     hsBanner.textContent = ("GAME OVER\nYour Score is: " + currentScore + "\nYou got " + numCorrect + " out of 5 correct!");
     clearInterval(hourGlass);
