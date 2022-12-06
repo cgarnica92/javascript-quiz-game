@@ -20,24 +20,21 @@ optAButton.addEventListener("click", function() {
         console.log('Wrong! Your Time Remaining : ' + timeLeft);
     } else if ( askedQs.length === 6 ) {
         currentScore += 50
-        checkScores();
-        if( isWorthy === false ) {
-            endGame();
-            console.log("Sorry Amigo, Not this Time.");
+        bonusBoy();
         }
         console.log('Your final score is! ' + currentScore);
-    } else {
-        chooseQ();
-        nextQ();  
-    };
 
     if ( optAButton.textContent === questions[currentQ].answer ) {
         currentScore += 10;
         numCorrect ++;
-        console.log('Correct! Your current score is: ' + currentScore)
+        console.log('Correct! Your current score is: ' + currentScore);
+        chooseQ();
+        nextQ(); 
     } else {
         timeLeft -= 8;
-        console.log('Incorrect! Time Left: ' + timeLeft)
+        console.log('Incorrect! Time Left: ' + timeLeft + ";  correct answer was: " + questions[currentQ].answer );
+        chooseQ();
+        nextQ(); 
     }
 });
 optBButton.addEventListener("click", function() {
@@ -52,24 +49,21 @@ optBButton.addEventListener("click", function() {
         console.log('Wrong! Your Time Remaining : ' + timeLeft);
     } else if ( askedQs.length === 6 ) {
         currentScore += 50
-        checkScores();
-        if( isWorthy === false ) {
-            endGame();
-            console.log("Sorry Amigo, Not this Time.");
-        }
+        bonusBoy();
         console.log('Your final score is! ' + currentScore);
-    } else {
-        chooseQ();
-        nextQ();  
-    };
+    } 
 
     if ( optBButton.textContent === questions[currentQ].answer ) {
         currentScore += 10;
         numCorrect ++;
-        console.log('Correct! Your current score is: ' + currentScore)
+        console.log('Correct! Your current score is: ' + currentScore);
+        chooseQ();
+        nextQ(); 
     } else {
         timeLeft -= 8;
-        console.log('Incorrect! Time Left: ' + timeLeft)
+        console.log('Incorrect! Time Left: ' + timeLeft + ";  correct answer was: " + questions[currentQ].answer);
+        chooseQ();
+        nextQ(); 
     }
 });
 optCButton.addEventListener("click", function() {
@@ -84,23 +78,21 @@ optCButton.addEventListener("click", function() {
         console.log('Wrong! Your Time Remaining : ' + timeLeft);
     } else if ( askedQs.length === 6 ) {
         currentScore += 50
-        checkScores();
-        if( isWorthy === false ) {
-            endGame();
-            console.log("Sorry Amigo, Not this Time.");
-        }
+        bonusBoy();
         console.log('Your final score is! ' + currentScore);
-    } else {
-        chooseQ();
-        nextQ();  
-    };
+    } 
 
-    if ( optCButton.textContent === questions[currentQ].answer ) {
+    if ( optCButton.textContent === questions[currentQ].answer  ) {
         currentScore += 10;
-        console.log('Correct! Your current score is: ' + currentScore)
+        numCorrect ++;
+        console.log('Correct! Your current score is: ' + currentScore);
+        chooseQ();
+        nextQ(); 
     } else {
         timeLeft -= 8;
-        console.log('Incorrect! Time Left: ' + timeLeft)
+        console.log('Incorrect! Time Left: ' + timeLeft + ";  correct answer was: " + questions[currentQ].answer);
+        chooseQ();
+        nextQ(); 
     }
 });
 optDButton.addEventListener("click", function() {
@@ -114,31 +106,28 @@ optDButton.addEventListener("click", function() {
         console.log('Wrong! Your Time Remaining : ' + timeLeft);
     } else if ( askedQs.length === 6 ) {
         currentScore += 50
-        checkScores();
-        if( isWorthy === false ) {
-            endGame();
-            console.log("Sorry Amigo, Not this Time.");
-        }
+        bonusBoy();
         console.log('Your final score is! ' + currentScore);
-    } else {
-        chooseQ();
-        nextQ();  
-    };
+    } 
 
     if ( optDButton.textContent === questions[currentQ].answer ) {
         currentScore += 10;
-        console.log('Correct! Your current score is: ' + currentScore)
+        numCorrect++;
+        console.log('Correct! Your current score is: ' + currentScore);
+        chooseQ();
+        nextQ();  
     } else {
         timeLeft -= 8;
-        console.log('Incorrect! Time Left: ' + timeLeft)
+        console.log('Incorrect! Time Left: ' + timeLeft + ";  correct answer was: " + questions[currentQ].answer);
+        chooseQ();
+        nextQ();  
     }
 });
 
 //View High Scores/ Return to Game
 scoreButton.addEventListener("click", function() {
     if (modal.style.display === "flex") {
-        modal.style.display = "none";
-        hsContent.style.display = "none";
+        location.reload();
     } else {    
         modal.style.display = "flex";
         mButton.textContent = "Go Back";
@@ -176,6 +165,24 @@ mButton.addEventListener("click", function() {
         });
         }
     } else {
-        modal.style.display = "none";
+        location.reload();
     }
+});
+
+//Take as long as you need to
+bButton.addEventListener( "click", function() {
+    checkScores();
+    if( isWorthy === false ) {
+        endGame();
+        bonusDisplay.style.display = "none";
+        console.log("Sorry Amigo, Not this Time.");
+    } else {
+        playerInput();
+        bonusDisplay.style.display = "none";
+    }
+});
+
+//Reloads if player is 
+goBack.addEventListener( "click", function(){
+    location.reload();
 });

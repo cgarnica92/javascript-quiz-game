@@ -14,6 +14,8 @@ var scoreButton = document.querySelector(".hs-button");
 var hsBanner = document.querySelector(".hs-banner");
 var hsContent = document.querySelector(".high-scores");
 var mButton = document.querySelector(".m-button");
+var bonusDisplay = document.querySelector(".bonus");
+var bButton = document.querySelector(".b-button");
 var goBack = document.createElement("button");
 var qText = document.createElement("h2");
 var optAButton = document.createElement("button");
@@ -28,7 +30,7 @@ var pInput = document.createElement("input");
 var currentQ = 0;
 var askedQs = [];
 var currentScore = 0;
-var timeLeft = 6;
+var timeLeft = 61;
 var hourGlass;
 var savedScores = JSON.parse(window.localStorage.getItem("highscores"));
 var isWorthy;
@@ -137,3 +139,9 @@ function startNew() {
     chooseQ();
     startGame();
 };
+
+//You're Welcome
+function bonusBoy() {
+    bonusDisplay.style.display = "flex";
+    bButton.textContent = "Thank You";
+}

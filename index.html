@@ -7,13 +7,21 @@
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     </head>
     <body>
-        <header>
-            <button class="hs-button">High Scores</button>
+        <header class="header">
+            <div class="hs">
+                <button class="hs-button">High Scores</button>
+            </div>
             <div class="timer"></div>
         </header>
 
 
         <main>
+            <div class="bonus">
+                <div>
+                    <img src="./images/shineboy.jpeg" alt="The Shining Boy" class="criminal" />
+                </div>
+                <button class="b-button"></button>
+            </div>
                 <div class="modal">
                     <div class="modal-contents">
                         <div class="high-scores">
@@ -24,8 +32,8 @@
                 </div>
                 <section>
                     <div class="card text-area">
-                        <div class="card game-launch">This quiz will test your knowledge of basic JavaScript elements. You will be given five multiple choice questions to answer over a time limit of 60 seconds.<br> Are you ready to test your might?</div>
-                        <div><button class="start-button">BEGIN</button></div>
+                        <div class="card game-launch">This quiz will test your knowledge of basic JavaScript elements. You will be given five multiple choice questions to answer over a time limit of 60 seconds. <br> Get it correct and be rewarded; but get it wrong, and you'll lose time. <br> Are you ready?</div>
+                        <div><button class="start-button">TEST YOUR MIGHT</button></div>
                     </div>
                 </section>
                 <section class="card options">
@@ -39,6 +47,5 @@
         <script src="assets/js/questions.js"></script>
         <script src="assets/js/buttons.js"></script>
         <script src="assets/js/scores.js"></script>
-        <script src="assets/js/test-scores.js"></script>
     </body>
 </html>

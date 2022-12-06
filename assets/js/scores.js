@@ -50,12 +50,11 @@ function playerInput() {
 function printScores () {
     var scoreZone = document.createElement("ol");
     hsContent.appendChild(scoreZone);
-    for ( i = 0; i < savedScores.length; i++) {
-        var scorePost = JSON.parse(savedScores[i]);
+    var scorePost = JSON.parse(JSON.stringify(savedScores));
+    for ( i = 0; i < scorePost.length; i++) {
         var scoreSlot = document.createElement("li");
         scoreZone.appendChild(scoreSlot);
-        scoreSlot.textContent = scorePost.name + " - " + scorePost.score;
-        console.log("Name: " + JSON.stringify(savedScores[i]));
+        scoreSlot.textContent = scorePost[i]
     }
-    
 };
+

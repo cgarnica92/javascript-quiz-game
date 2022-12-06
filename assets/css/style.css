@@ -15,11 +15,12 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    min-height: 50px;
 }
 
 main {
     display: flex;
-    min-height: 100vh;
+    min-height: 75vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -34,6 +35,7 @@ section {
     width: 50vw;
     height: 25vh;
     border: none;
+    font-weight: bold;
 }
 
 button {
@@ -49,11 +51,18 @@ button:hover {
     color:black;
 }
 
-.timer {
+ul {
+    list-style-type: none;
+}
 
+.timer {
+    font-size: x-large;
+    font-weight: bold;
+    padding-right: 50px;
+    padding-top: 15px;
 }
 .start-button {
-
+    font-size: 25px;
 }
 
 .card {
@@ -64,6 +73,8 @@ button:hover {
     min-height: 12vh;
     min-width: 20vw;
     justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .modal {
@@ -94,6 +105,8 @@ button:hover {
 
 .options button {
     width: 100%;
+    border:none;
+    height: 15vh;
 }
 .options button:hover {
     background-color: blueviolet;
@@ -104,9 +117,28 @@ button:hover {
     text-align: center;
 }
 
-.high-scores {
+.hs {
+    padding-left: 15px;
+    padding-top: 15px
 }
 
-.hide {
+.bonus {
     display: none;
-  }
+    position:fixed;
+    border: 2px;
+    border-color: rgba(6, 238, 6, 0.938);
+    border: 6px;
+    border-style: double;
+    z-index: 1;
+    min-height: 75%;
+    min-width: 75%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.criminal {
+    position:relative;
+    max-height: 40vh;
+    max-width: 40vw;
+}

@@ -1,33 +1,33 @@
 var questions = [
     {
-        question: 'Q1',
-        choices: ['Q1C1', 'Q1C2', 'Q1C3', 'Q1C4'],
-        answer: 'Q1C1',
+        question: 'Which data type is used as a variable to represent a value of either "true" or "false?"',
+        choices: ['Truthior', 'Liar Liar', 'Boolean', 'String'],
+        answer: 'Boolean'
     },
     {
-        question: 'Q2',
-        choices: ['Q2C1', 'Q2C2', 'Q2C3', 'Q2C4'],
-        answer: 'Q2C1',
+        question: 'JavaScript is a(n) _____ Oriented Programming Language',
+        choices: ['Ace Ventura', 'Object', 'Logic', 'Function'],
+        answer: 'Object'
     },
     {
-        question: 'Q3',
-        choices: ['Q3C1', 'Q3C2', 'Q3C3', 'Q3C4'],
-        answer: 'Q3C1',
+        question: 'Which of the following options illustrates the correct way to declare a new variable with a string as its value?',
+        choices: ['newV.value("string")', 'new.string = "variable"', 'string.value:string', 'var jCar = "Man on the Moon";'],
+        answer: 'var jCar = "Man on the Moon";'
     },
     {
-        question: 'Q4',
-        choices: ['Q4C1', 'Q4C2', 'Q4C3', 'Q4C4'],
-        answer: 'Q4C1',
+        question: 'A _____ is a method used to execute a section of a code multiple times over defined iterations. ',
+        choices: ['for loop', 'function', 'Cable Guy', 'variable'],
+        answer: 'for loop'
     },
     {
-        question: 'Q5',
-        choices: ['Q5C1', 'Q5C2', 'Q5C3', 'Q5C4'],
-        answer: 'Q5C1',
+        question: 'The data type used to store text/character information as a variable is known as a(n) ______.',
+        choices: ['boolean', 'Truman Show', 'string', 'local storage'],
+        answer: 'string'
     },
 ];
 
 var bonusQ = {
-    question: 'BONUS',
-    choices: ['B1C1', 'B1C2', 'B1C3', 'B1C4'],
-    answer: ['B1C1', 'B1C2', 'B1C3', 'B1C4'],
+    question: 'BONUS: Would you like to see a picture of my shining boy?',
+    choices: ['Yes.', 'Of Course.', "Let's Go!", 'Um, Sure?'],
+    answer: ['Yes.', 'Of Course.', "Let's Go!", 'Um, Sure?']
 };
